@@ -12,6 +12,8 @@ General view of the project:
 Browser ──443 (TLS 1.2/1.3)──▶ NGINX ──9000──▶ WordPress + php-fpm ──3306──▶ MariaDB
 ```
 
+## Project description
+
 ### Use of Docker and sources
 
 Each service has its own Dockerfile in `srcs/requirements/<service>/`, with its configuration in `conf/` and its startup script in `tools/`. `srcs/docker-compose.yml` defines the services, the network, two named volumes and the secrets. The `Makefile` builds and starts everything through Docker Compose.
@@ -76,6 +78,6 @@ AI was used to:
 
 - Research and explain concepts such as PID 1, php-fpm, FastCGI, MariaDB authentication, Docker volumes and secrets.
 - Explain the underlying Linux mechanisms (namespaces, mounts, Unix sockets, file permissions).
-- Provide example Docker container usage and configurations.
+- Provide example docker container usage and configurations.
 - Help interpret errors and suggest test commands (TLS versions, persistence, port checks).
 - Edit the documentation.
